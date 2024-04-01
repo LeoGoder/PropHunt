@@ -14,5 +14,8 @@ This fork adds a number of features that are waiting to be pulled into CloneDeat
 NOTE: If you modify a VOX file, and its associated MeshLibrary doesn't fully update, try reloading the scene (menu Scene->Reload Saved Scene). 
 
 TODO : 
-- [ ] test
-- [ ] ui
+- Add damage system
+- Add health system
+- Add health bar
+- Add multiplayer system
+- 

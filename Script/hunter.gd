@@ -4,13 +4,17 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var push_force = 5
+var health = 100.0
 
 @onready var neck = %neck
 @onready var cam = %CameraFPS
 @onready var gun_barrel = $neck/CameraFPS/ProtoGun/RayCast3D
+@onready var labelCurrentHealth = $UserInterface/BoxContainer/CurrentHealth
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
@@ -26,6 +30,7 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	move(delta)
+	labelCurrentHealth.text = str(health)
 	if Input.is_action_just_pressed("Shoot"):
 		Shoot()
 

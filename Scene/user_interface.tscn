@@ -41,3 +41,19 @@ width = 2.0
 [node name="Left" type="Line2D" parent="Reticle"]
 points = PackedVector2Array(-5, 0, -15, 0)
 width = 2.0
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Health" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Health "
+
+[node name="CurrentHealth" type="Label" parent="BoxContainer"]
+layout_mode = 2

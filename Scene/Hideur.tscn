@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ojucgnl0lj5a"]
+[gd_scene load_steps=7 format=3 uid="uid://ojucgnl0lj5a"]
 
 [ext_resource type="Script" path="res://Script/player.gd" id="1_drtsh"]
 [ext_resource type="Script" path="res://Script/RayCast3D.gd" id="2_aqc6d"]
 [ext_resource type="PackedScene" uid="uid://dyjit4avwoxa1" path="res://Scene/camera_fps.tscn" id="3_btvf8"]
+[ext_resource type="PackedScene" uid="uid://btwg7h1g7se15" path="res://Scene/user_interface.tscn" id="4_cv738"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sthau"]
 
@@ -30,3 +31,6 @@ unique_name_in_owner = true
 [node name="CameraFPS" parent="neck" instance=ExtResource("3_btvf8")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+
+[node name="UserInterface" parent="." instance=ExtResource("4_cv738")]

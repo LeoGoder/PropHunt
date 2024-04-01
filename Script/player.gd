@@ -4,9 +4,11 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var push_force = 5
+var health = 100.0
 
 @onready var neck = %neck
 @onready var cam = %CameraFPS
+@onready var labelCurrentHealth = $UserInterface/BoxContainer/CurrentHealth
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -57,3 +59,9 @@ func move(delta):
 func ChangePlayer():
 	$"..".ChangeThePlayer(global_position)
 	queue_free()
+	
+func TakeDamage(Ammount):
+	health -= Ammount
+	
+	if health <= 0 :
+		queue_free()

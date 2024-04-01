@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ojucgnl0lj5a"]
+
+[ext_resource type="Script" path="res://Script/player.gd" id="1_drtsh"]
+[ext_resource type="Script" path="res://Script/RayCast3D.gd" id="2_aqc6d"]
+[ext_resource type="PackedScene" uid="uid://dyjit4avwoxa1" path="res://Scene/camera_fps.tscn" id="3_btvf8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sthau"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7q6gj"]
+
+[node name="Hideur" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_drtsh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_sthau")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7q6gj")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -1.31134e-07, -1, 0, 3, -4.37114e-08, 0, 0, 0)
+collision_mask = 4
+script = ExtResource("2_aqc6d")
+
+[node name="neck" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="CameraFPS" parent="neck" instance=ExtResource("3_btvf8")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

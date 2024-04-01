@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0va6yynamgdu"]
+
+[ext_resource type="PackedScene" uid="uid://dyjit4avwoxa1" path="res://Scene/camera_fps.tscn" id="1_vsjpb"]
+[ext_resource type="Script" path="res://Script/hunter.gd" id="1_vvgbn"]
+[ext_resource type="PackedScene" uid="uid://dx2ifkm7k0fht" path="res://Scene/proto_gun.tscn" id="3_maoey"]
+[ext_resource type="PackedScene" uid="uid://btwg7h1g7se15" path="res://Scene/user_interface.tscn" id="4_52tpt"]
+[ext_resource type="PackedScene" uid="uid://cu6bqfsd1dsen" path="res://Scene/option_menu.tscn" id="5_tamrx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mia11"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyqaw"]
+
+[node name="Hunter" type="CharacterBody3D"]
+script = ExtResource("1_vvgbn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_mia11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_lyqaw")
+
+[node name="neck" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="CameraFPS" parent="neck" instance=ExtResource("1_vsjpb")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="ProtoGun" parent="neck/CameraFPS" instance=ExtResource("3_maoey")]
+transform = Transform3D(0.199878, 0.000243595, 0.00697565, 0, 0.199878, -0.0069799, -0.0069799, 0.00697565, 0.199756, 0.626453, -0.180682, -0.942625)
+
+[node name="UserInterface" parent="." instance=ExtResource("4_52tpt")]
+
+[node name="OptionMenu" parent="." instance=ExtResource("5_tamrx")]
+unique_name_in_owner = true
+visible = false

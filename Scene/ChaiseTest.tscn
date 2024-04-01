@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl80lt3566yj5"]
+
+[ext_resource type="Script" path="res://Script/ChaiseTest.gd" id="1_s7tat"]
+[ext_resource type="ArrayMesh" uid="uid://dqwesnnsytwmi" path="res://Assets/chaiseTresBasique.obj" id="1_totf8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fk5a"]
+size = Vector3(2.52643, 4.20355, 2.87964)
+
+[node name="Node3D" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
+can_sleep = false
+freeze_mode = 1
+script = ExtResource("1_s7tat")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_totf8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138092, 0.295563, 0.0352783)
+shape = SubResource("BoxShape3D_8fk5a")

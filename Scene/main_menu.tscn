@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://c27gadpkryrb"]
+
+[ext_resource type="Script" path="res://Script/BoxContainer.gd" id="1_ah222"]
+[ext_resource type="Script" path="res://Script/Option.gd" id="2_a8w77"]
+[ext_resource type="Script" path="res://Script/Quit.gd" id="2_h4wa3"]
+[ext_resource type="PackedScene" uid="uid://cu6bqfsd1dsen" path="res://Scene/option_menu.tscn" id="4_15xvo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kdbrk"]
+sky_top_color = Color(0.14902, 0.439216, 0.819608, 1)
+sky_horizon_color = Color(0.587255, 0.652054, 0.738152, 1)
+ground_horizon_color = Color(0.587255, 0.652054, 0.738152, 1)
+
+[sub_resource type="Sky" id="Sky_3ooht"]
+sky_material = SubResource("ProceduralSkyMaterial_kdbrk")
+
+[sub_resource type="Environment" id="Environment_303q7"]
+background_mode = 2
+sky = SubResource("Sky_3ooht")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_303q7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 133.0
+offset_right = 174.0
+offset_bottom = 173.0
+script = ExtResource("1_ah222")
+
+[node name="SinglePlayer" type="Button" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "SinglePlayer"
+flat = true
+
+[node name="Multiplayer" type="Button" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Multiplayer"
+flat = true
+
+[node name="Option" type="Button" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Option"
+flat = true
+script = ExtResource("2_a8w77")
+
+[node name="Quit" type="Button" parent="BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+flat = true
+script = ExtResource("2_h4wa3")
+
+[node name="OptionMenu" parent="." instance=ExtResource("4_15xvo")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="BoxContainer/Option" to="BoxContainer/Option" method="_on_pressed"]
+[connection signal="pressed" from="BoxContainer/Quit" to="BoxContainer/Quit" method="_on_pressed"]

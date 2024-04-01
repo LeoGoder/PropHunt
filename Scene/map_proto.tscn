@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceaf2yk028r7a"]
+
+[ext_resource type="Texture2D" uid="uid://c7vij78wqhuo0" path="res://godot-kenney/Vector/texture_04.svg" id="1_q5imq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ejml8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m602l"]
+albedo_texture = ExtResource("1_q5imq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yt61m"]
+
+[node name="MapProto" type="StaticBody3D"]
+transform = Transform3D(13.0166, 0, 0, 0, 1, 0, 0, 0, 12.3235, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ejml8")
+surface_material_override/0 = SubResource("StandardMaterial3D_m602l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_yt61m")

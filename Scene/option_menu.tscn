@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu6bqfsd1dsen"]
+
+[ext_resource type="Script" path="res://Script/option_menu.gd" id="1_3j8wb"]
+[ext_resource type="Script" path="res://Script/CloseOptionMenu.gd" id="1_20ku4"]
+
+[node name="OptionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3j8wb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -399.0
+offset_top = -241.5
+offset_right = 399.0
+offset_bottom = 241.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.341176, 0.341176, 0.341176, 1)
+
+[node name="CloseOptionMenu" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 769.0
+offset_right = 799.0
+offset_bottom = 31.0
+text = "X"
+script = ExtResource("1_20ku4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 29.5
+offset_right = 179.0
+offset_bottom = 178.5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Window" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Window Mode"
+
+[node name="WindowButton2" type="OptionButton" parent="ColorRect/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Resolution" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="ResolutionButton" type="OptionButton" parent="ColorRect/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="OptionButton3" type="OptionButton" parent="ColorRect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[connection signal="pressed" from="ColorRect/CloseOptionMenu" to="ColorRect/CloseOptionMenu" method="_on_pressed"]

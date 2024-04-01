@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhdr82rw0umpm"]
+
+[ext_resource type="PackedScene" uid="uid://ceaf2yk028r7a" path="res://Scene/map_proto.tscn" id="1_ndy47"]
+[ext_resource type="Script" path="res://Script/SceneProto.gd" id="1_y7xfp"]
+[ext_resource type="PackedScene" uid="uid://dl80lt3566yj5" path="res://Scene/ChaiseTest.tscn" id="4_fcpwv"]
+[ext_resource type="PackedScene" uid="uid://b0va6yynamgdu" path="res://Scene/hunter.tscn" id="5_4o7sd"]
+
+[node name="SceneProto" type="Node3D"]
+script = ExtResource("1_y7xfp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.738832, 0.67389, 0, -0.67389, 0.738832, 0, 3.85056, 0)
+
+[node name="MapProto" parent="." instance=ExtResource("1_ndy47")]
+transform = Transform3D(69.7179, 0, 0, 0, 1, 0, 0, 0, 222.402, 0, 0, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("4_fcpwv")]
+transform = Transform3D(0.997154, 0, -0.0753964, 0, 1, 0, 0.0753964, 0, 0.997154, 0.516614, 2.03662, -4.09667)
+
+[node name="Hunter" parent="." instance=ExtResource("5_4o7sd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74762, 0)

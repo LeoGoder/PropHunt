@@ -1,3 +1,4 @@
+ADDON : 
 This is an addon for **Godot 4.0**.  A **Godot 3.5** version is available on the [master branch](https://github.com/jon-heard/Godot-MagicaVoxel-Importer-with-Extensions).
 
 A fork of CloneDeath's Godot plugin [MagicaVoxel importer with extensions](https://github.com/CloneDeath/MagicaVoxel-Importer-with-Extensions).
@@ -11,3 +12,7 @@ This fork adds a number of features that are waiting to be pulled into CloneDeat
 - __A new node-type has been added to easily animate keyframed MagicaVoxel VOX files__ - Once all keyframes are in a MeshLibrary (using the new importer), this new node-type, "FramedMeshInstance", lets you easily animate them. It takes the MeshLibrary and an an integer called "Current Frame". "Current Frame" lets you select which keyframe is display. You can set it in the inspector or with an AnimationPlayer to animate the VOX sprite.
 
 NOTE: If you modify a VOX file, and its associated MeshLibrary doesn't fully update, try reloading the scene (menu Scene->Reload Saved Scene). 
+
+TODO : 
+- [ ] test
+- [ ] 

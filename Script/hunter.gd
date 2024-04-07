@@ -6,33 +6,39 @@ const JUMP_VELOCITY = 4.5
 var push_force = 5
 var health = 100.0
 
-@onready var neck = %neck
-@onready var cam = %CameraFPS
+@onready var neck = $neck
+@onready var cam = $neck/CameraFPS
 @onready var gun_barrel = $neck/CameraFPS/ProtoGun/RayCast3D
 @onready var labelCurrentHealth = $UserInterface/BoxContainer/CurrentHealth
 
+func _enter_tree():
+	set_multiplayer_authority(name.to_int())
+
+
+func _ready():
+	cam.current = is_multiplayer_authority()
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
-
-
 func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	elif event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		%OptionMenu.show()
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * 0.01)
-			cam.rotate_x(-event.relative.y * 0.01)
-			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+	if is_multiplayer_authority():
+		if event is InputEventMouseButton:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		elif event.is_action_pressed("ui_cancel"):
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			#%OptionMenu.show()
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			if event is InputEventMouseMotion:
+				neck.rotate_y(-event.relative.x * 0.01)
+				cam.rotate_x(-event.relative.y * 0.01)
+				cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
 func _physics_process(delta):
-	move(delta)
-	labelCurrentHealth.text = str(health)
-	if Input.is_action_just_pressed("Shoot"):
-		Shoot()
+	if is_multiplayer_authority():
+		cam.current = is_multiplayer_authority()
+		move(delta)
+		labelCurrentHealth.text = str(health)
+		if Input.is_action_just_pressed("Shoot"):
+			Shoot()
 
 
 func move(delta):
@@ -70,3 +76,5 @@ func Shoot():
 	#newBullet.global_rotation = gun_barrel.global_rotation
 	newBullet.transform.basis = gun_barrel.global_transform.basis
 	get_parent().add_child(newBullet)
+	
+

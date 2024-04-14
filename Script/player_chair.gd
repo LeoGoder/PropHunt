@@ -1,4 +1,11 @@
-extends "res://Script/player.gd"
+extends CharacterBody3D
+
+const SPEED = 5.0
+const JUMP_VELOCITY = 4.5
+var push_force = 5
+var health = 100.0
+
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _physics_process(delta):
 	# Add the gravity.

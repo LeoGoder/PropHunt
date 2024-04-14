@@ -30,12 +30,19 @@ func _physics_process(delta):
 
 func move(delta):
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	#if not is_on_floor():
+		#velocity.y -= gravity * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	# Handle the fact to go up.
+	if Input.is_action_pressed("sauter"):
 		velocity.y = JUMP_VELOCITY
+	elif !Input.is_action_pressed("sauter"):
+		velocity.y = 0.0
+		
+	if Input.is_action_pressed("accroupi"):
+		velocity.y = -JUMP_VELOCITY
+	elif !Input.is_action_pressed("sauter"):
+		velocity.y = 0.0
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

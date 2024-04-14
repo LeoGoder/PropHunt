@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhdr82rw0umpm"]
+[gd_scene load_steps=7 format=3 uid="uid://dhdr82rw0umpm"]
 
 [ext_resource type="PackedScene" uid="uid://ceaf2yk028r7a" path="res://Scene/map_proto.tscn" id="1_ndy47"]
 [ext_resource type="Script" path="res://Script/SceneProto.gd" id="1_y7xfp"]
 [ext_resource type="PackedScene" uid="uid://dl80lt3566yj5" path="res://Scene/ChaiseTest.tscn" id="4_fcpwv"]
 [ext_resource type="PackedScene" uid="uid://b4lyv220iwyw8" path="res://Scene/multiplayer_menu.tscn" id="4_upegq"]
 [ext_resource type="PackedScene" uid="uid://b0va6yynamgdu" path="res://Scene/hunter.tscn" id="5_pxktg"]
+[ext_resource type="PackedScene" uid="uid://ojucgnl0lj5a" path="res://Scene/Hideur.tscn" id="6_kx8ro"]
 
 [node name="SceneProto" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
@@ -29,6 +30,7 @@ spawn_limit = 8
 visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_right = 40.0
@@ -41,6 +43,9 @@ text = "Host"
 [node name="Connect" type="Button" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 text = "Connect"
+
+[node name="Hideur" parent="." instance=ExtResource("6_kx8ro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08028, 0)
 
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Connect" to="." method="_on_connect_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0d1ln4t6iiva"]
+
+[ext_resource type="ArrayMesh" uid="uid://di22ujsu57yvl" path="res://Assets/House/PotEau.vox" id="1_qldgb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gygqm"]
+size = Vector3(0.329163, 0.449707, 0.270325)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_co3rj"]
+size = Vector3(0.180908, 0.238831, 0.0303345)
+
+[node name="PotEau" type="RigidBody3D"]
+
+[node name="PotEau" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0635771, 0, -0.105536)
+mesh = ExtResource("1_qldgb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10849, 0.314209, -0.120148)
+shape = SubResource("BoxShape3D_gygqm")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362356, 0.390349, -0.120514)
+shape = SubResource("BoxShape3D_co3rj")

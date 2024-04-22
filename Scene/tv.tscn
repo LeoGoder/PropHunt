@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://drdgob6wi4r57"]
+
+[ext_resource type="ArrayMesh" uid="uid://cftcp251a76fh" path="res://Assets/House/TV.vox" id="1_3okfp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0e85m"]
+size = Vector3(2.19897, 1.19781, 0.104431)
+
+[node name="TV" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.109286)
+gravity_scale = 0.0
+
+[node name="Tv" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226298, -1.19209e-07, 0.156879)
+mesh = ExtResource("1_3okfp")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19176, 0.0716452, 0.1611)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.2
+light_specular = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123657, 0.59848, 0.107025)
+shape = SubResource("BoxShape3D_0e85m")

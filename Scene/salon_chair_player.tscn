@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://ii8g65v53ma8"]
+
+[ext_resource type="Script" path="res://Script/salon_chair_player.gd" id="1_5ygiw"]
+[ext_resource type="ArrayMesh" uid="uid://c3jnlgsynoxfr" path="res://Assets/House/Chaise.vox" id="1_axjjr"]
+[ext_resource type="PackedScene" uid="uid://c1k83vdlnugf2" path="res://Scene/came_tp.tscn" id="3_vm6jr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vekfy"]
+size = Vector3(0.102402, 0.601929, 0.0997009)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgulm"]
+size = Vector3(0.702393, 0.0996094, 0.699341)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fvkx5"]
+size = Vector3(0.0985718, 0.699768, 0.0984497)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0pp3"]
+size = Vector3(0.502533, 0.19989, 0.100952)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3jo6n"]
+size = Vector3(0.499023, 0.101196, 0.0974121)
+
+[node name="SalonChairPlayer" type="CharacterBody3D"]
+script = ExtResource("1_5ygiw")
+
+[node name="Chaise" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.176584, 0, -0.193896)
+mesh = ExtResource("1_axjjr")
+
+[node name="Pied_avant_gauche" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.273777, 0.300108, -0.4375)
+shape = SubResource("BoxShape3D_vekfy")
+
+[node name="Pied_avant_droit" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.324308, 0.300516, -0.445689)
+shape = SubResource("BoxShape3D_vekfy")
+
+[node name="Pied_arriere_gauche" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.268152, 0.302528, 0.161816)
+shape = SubResource("BoxShape3D_vekfy")
+
+[node name="Pied_arriere_droit" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.329933, 0.303073, 0.153627)
+shape = SubResource("BoxShape3D_vekfy")
+
+[node name="Sit" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0296352, 0.648512, -0.142034)
+shape = SubResource("BoxShape3D_rgulm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.267066, 1.05048, 0.161386)
+shape = SubResource("BoxShape3D_fvkx5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.334335, 1.05072, 0.153796)
+shape = SubResource("BoxShape3D_fvkx5")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0330704, 1.29972, 0.157995)
+shape = SubResource("BoxShape3D_a0pp3")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0338022, 0.950893, 0.159146)
+shape = SubResource("BoxShape3D_3jo6n")
+
+[node name="CamOrigin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.967617, 0.252424, 0, -0.252424, 0.967617, 0.0030973, 1.30382, 1.57258)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CamOrigin"]
+margin = 0.5
+
+[node name="CameTP" parent="CamOrigin/SpringArm3D" instance=ExtResource("3_vm6jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

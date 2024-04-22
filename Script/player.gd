@@ -4,11 +4,14 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var push_force = 5
-var health = 100.0
 
 @onready var neck = %neck
 @onready var cam = %CameraFPS
+@onready var raycast = %RayCast3D
 @onready var labelCurrentHealth = $UserInterface/BoxContainer/CurrentHealth
+
+
+@export var sens = 0.1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -20,9 +23,11 @@ func _unhandled_input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * 0.01)
-			cam.rotate_x(-event.relative.y * 0.01)
-			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+			neck.rotate_y(-event.relative.x * 0.0025)
+			cam.rotate_x(-event.relative.y * 0.0025)
+			neck.rotation.x = clamp(cam.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+			
+
 
 func _physics_process(delta):
 	move(delta)
@@ -58,17 +63,12 @@ func move(delta):
 	move_and_slide()
 	
 	# after calling move_and_slide()
-	for i in get_slide_collision_count():
-		var c = get_slide_collision(i)
-		if c.get_collider() is RigidBody3D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+	#for i in get_slide_collision_count():
+		#var c = get_slide_collision(i)
+		#if c.get_collider() is RigidBody3D:
+			#c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
 func ChangePlayer():
-	$"..".ChangeThePlayer(global_position)
+	Global.ChangeThePlayer(global_position)
 	queue_free()
 	
-func TakeDamage(Ammount):
-	health -= Ammount
-	
-	if health <= 0 :
-		queue_free()

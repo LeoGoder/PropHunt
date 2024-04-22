@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://drry16ncjd4h7"]
+
+[ext_resource type="ArrayMesh" uid="uid://sd5dxfh2khtl" path="res://Assets/House/cup.vox" id="1_3gihp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7in60"]
+size = Vector3(0.101624, 0.131088, 0.108643)
+
+[node name="Cup" type="RigidBody3D"]
+
+[node name="Cup" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_3gihp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0202942, 0.0652542, -0.0057373)
+shape = SubResource("BoxShape3D_7in60")

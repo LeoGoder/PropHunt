@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhjwdmwwjficy"]
+
+[ext_resource type="ArrayMesh" uid="uid://b004queagste7" path="res://Assets/House/Plate.vox" id="1_bn4p1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0t51"]
+size = Vector3(1.60254, 0.200745, 1.49847)
+
+[node name="plate" type="RigidBody3D"]
+
+[node name="Plate" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0103895, 0, 0.0153476)
+mesh = ExtResource("1_bn4p1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0309958, 0.0598601, 0.00567791)
+shape = SubResource("BoxShape3D_s0t51")

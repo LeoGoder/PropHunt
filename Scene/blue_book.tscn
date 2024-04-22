@@ -8,9 +8,9 @@ points = PackedVector3Array(0.299922, 0.3, 0.8, -0.5, 0.3, 0.8, 0.299922, 0, 0.8
 [node name="BlueBook" type="RigidBody3D"]
 
 [node name="BlueBook" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278377, 0, -0.112013)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.278377, 0, -0.112013)
 mesh = ExtResource("1_o4tb2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.278377, 0, -0.112013)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.278377, 0, -0.112013)
 shape = SubResource("ConvexPolygonShape3D_s7pp4")

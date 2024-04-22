@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ojucgnl0lj5a"]
 
 [ext_resource type="Script" path="res://Script/player.gd" id="1_drtsh"]
-[ext_resource type="Script" path="res://Script/RayCast3D.gd" id="2_aqc6d"]
 [ext_resource type="PackedScene" uid="uid://dyjit4avwoxa1" path="res://Scene/camera_fps.tscn" id="3_btvf8"]
+[ext_resource type="Script" path="res://Scene/oui.gd" id="3_emsyj"]
 [ext_resource type="PackedScene" uid="uid://btwg7h1g7se15" path="res://Scene/user_interface.tscn" id="4_cv738"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sthau"]
@@ -21,17 +21,18 @@ mesh = SubResource("CapsuleMesh_sthau")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_7q6gj")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, -1.31134e-07, -1, 0, 3, -4.37114e-08, 0, 0, 0)
-collision_mask = 4
-script = ExtResource("2_aqc6d")
-
 [node name="neck" type="Node3D" parent="."]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120883, 0)
 
 [node name="CameraFPS" parent="neck" instance=ExtResource("3_btvf8")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143296, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="neck/CameraFPS"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -10, 0)
+collision_mask = 4
+script = ExtResource("3_emsyj")
 
 [node name="UserInterface" parent="." instance=ExtResource("4_cv738")]

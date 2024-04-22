@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2v8qqpf716gu"]
+
+[ext_resource type="ArrayMesh" uid="uid://c43cm883t1rkb" path="res://Assets/House/TVStand.vox" id="1_rwytc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8j7da"]
+size = Vector3(0.899048, 0.897949, 1.10211)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5p2"]
+size = Vector3(0.907227, 0.103516, 1.09888)
+
+[node name="TVStand" type="RigidBody3D"]
+
+[node name="TvStand" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00568545, 0, -0.0104072)
+mesh = ExtResource("1_rwytc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.856323, 0.450439, -0.0587463)
+shape = SubResource("BoxShape3D_8j7da")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.947102, 0.450439, -0.0587463)
+shape = SubResource("BoxShape3D_8j7da")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0463867, 0.847168, -0.0587158)
+shape = SubResource("BoxShape3D_yf5p2")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0431166, 0.050685, -0.0598756)
+shape = SubResource("BoxShape3D_yf5p2")

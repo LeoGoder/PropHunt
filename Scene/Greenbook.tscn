@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://gympvxcrreh5"]
+
+[ext_resource type="ArrayMesh" uid="uid://bkrcktl5kofhf" path="res://Assets/House/Greenbook.vox" id="1_v57q3"]
+[ext_resource type="Script" path="res://Scene/Greenbook.gd" id="1_vwrsu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6y864"]
+size = Vector3(0.399536, 0.150391, 0.649292)
+
+[node name="Greenbook" type="RigidBody3D"]
+collision_layer = 5
+script = ExtResource("1_vwrsu")
+
+[node name="Greenbook" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0630313, 0, 0.0302652)
+mesh = ExtResource("1_v57q3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113831, 0.0761719, 0.00628662)
+shape = SubResource("BoxShape3D_6y864")

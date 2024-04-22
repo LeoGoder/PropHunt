@@ -27,22 +27,27 @@ grow_vertical = 2
 script = ExtResource("1_tifmx")
 
 [node name="Top" type="Line2D" parent="Reticle"]
+visible = false
 points = PackedVector2Array(0, -5, 0, -15)
 width = 2.0
 
 [node name="Right" type="Line2D" parent="Reticle"]
+visible = false
 points = PackedVector2Array(5, 0, 15, 0)
 width = 2.0
 
 [node name="Bottom" type="Line2D" parent="Reticle"]
+visible = false
 points = PackedVector2Array(0, 5, 0, 15)
 width = 2.0
 
 [node name="Left" type="Line2D" parent="Reticle"]
+visible = false
 points = PackedVector2Array(-5, 0, -15, 0)
 width = 2.0
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

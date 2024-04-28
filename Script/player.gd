@@ -16,7 +16,17 @@ var push_force = 5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _enter_tree():
+	set_multiplayer_authority(str(name).to_int())
+	
+	
+func _ready():
+	if not is_multiplayer_authority(): return
+	cam.current = true
+
 func _unhandled_input(event):
+	if not is_multiplayer_authority(): return
+	
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
@@ -30,6 +40,7 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
+	if not is_multiplayer_authority(): return
 	move(delta)
 
 

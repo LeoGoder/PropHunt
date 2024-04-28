@@ -1,7 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://6ky1ouasmho8"]
 
 [ext_resource type="ArrayMesh" uid="uid://b0tr6uetgn1w4" path="res://Assets/House/HallwayFloor.vox" id="1_jovkf"]
-[ext_resource type="PackedScene" uid="uid://ojucgnl0lj5a" path="res://Scene/Hideur.tscn" id="2_7hs8k"]
 [ext_resource type="PackedScene" uid="uid://dwyx680ryvtot" path="res://Scene/table.tscn" id="4_mhue3"]
 [ext_resource type="PackedScene" uid="uid://c446o56fcmre2" path="res://Scene/chaise.tscn" id="5_c7t76"]
 [ext_resource type="ArrayMesh" uid="uid://bwsc7pnwcrr0r" path="res://Assets/House/Door.vox" id="5_r7c1j"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://drdgob6wi4r57" path="res://Scene/tv.tscn" id="12_fn4g3"]
 [ext_resource type="PackedScene" uid="uid://dhjwdmwwjficy" path="res://Scene/plate.tscn" id="13_3gps8"]
 [ext_resource type="PackedScene" uid="uid://b0d1ln4t6iiva" path="res://Scene/pot_eau.tscn" id="14_n6ivw"]
+[ext_resource type="PackedScene" uid="uid://b4lyv220iwyw8" path="res://Scene/multiplayer_menu.tscn" id="15_aj4ef"]
 [ext_resource type="PackedScene" uid="uid://drry16ncjd4h7" path="res://Scene/cup.tscn" id="15_d1qip"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fap1q"]
@@ -83,9 +83,6 @@ skeleton = NodePath("../CeilingLamp")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CeilingLamp4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0960145, -0.215136, -0.187179)
-
-[node name="Hideur" parent="." instance=ExtResource("2_7hs8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12616, 0.783389, -11.5295)
 
 [node name="Salon" type="Node" parent="."]
 
@@ -157,3 +154,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26042, 1.14369, -7.20823)
 
 [node name="Cup2" parent="Salon" instance=ExtResource("15_d1qip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39637, 1.14596, -7.57782)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Multiplayer_menu" parent="CanvasLayer" instance=ExtResource("15_aj4ef")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Scene/hunter_cam.tscn")
+spawn_path = NodePath("../HunterSpawn1")
+
+[node name="HunterSpawn1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.95206, 2.13059, -13.9713)

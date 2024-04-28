@@ -3,6 +3,8 @@ extends Node
 var global_position
 var global_rotation
 var ID
+var roleID
+var Host_or_join
 	
 func ChangeThePlayer(NewGlobal_position):
 	var ID = Global.ID
@@ -17,3 +19,4 @@ func ChangeThePlayer(NewGlobal_position):
 			var newPlayer = preload("res://Scene/player_green_book.tscn").instantiate()
 			add_child(newPlayer)
 			newPlayer.global_position = NewGlobal_position
+

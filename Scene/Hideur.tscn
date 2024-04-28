@@ -14,11 +14,11 @@ collision_layer = 8
 script = ExtResource("1_drtsh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("CapsuleMesh_sthau")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_7q6gj")
 
 [node name="neck" type="Node3D" parent="."]

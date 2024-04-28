@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4lyv220iwyw8"]
 
 [ext_resource type="Script" path="res://Scene/multiplayer_menu.gd" id="1_d31j3"]
-[ext_resource type="PackedScene" uid="uid://b0va6yynamgdu" path="res://Scene/hunter.tscn" id="2_sj8lq"]
+[ext_resource type="PackedScene" uid="uid://bpwjyybt07w5f" path="res://Scene/roles_choice.tscn" id="2_efpfa"]
 
 [node name="Multiplayer_menu" type="Control"]
 layout_mode = 3
@@ -11,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d31j3")
-player_scene = ExtResource("2_sj8lq")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -35,6 +34,10 @@ text = "Host"
 [node name="Join" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Join"
+
+[node name="Roles_Choice" parent="." instance=ExtResource("2_efpfa")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="HBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="HBoxContainer/Join" to="." method="_on_join_pressed"]

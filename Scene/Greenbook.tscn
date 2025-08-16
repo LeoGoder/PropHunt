@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://gympvxcrreh5"]
 
 [ext_resource type="ArrayMesh" uid="uid://bkrcktl5kofhf" path="res://Assets/House/Greenbook.vox" id="1_v57q3"]
-[ext_resource type="Script" path="res://Scene/Greenbook.gd" id="1_vwrsu"]
+[ext_resource type="Script" uid="uid://dbwolu7mqnc4d" path="res://Scene/Greenbook.gd" id="1_vwrsu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6y864"]
 size = Vector3(0.399536, 0.150391, 0.649292)

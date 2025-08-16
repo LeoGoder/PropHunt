@@ -77,4 +77,3 @@ func Shoot():
 	newBullet.transform.basis = gun_barrel.global_transform.basis
 	get_parent().add_child(newBullet)
 	
-

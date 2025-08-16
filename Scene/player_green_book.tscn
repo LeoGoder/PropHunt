@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://iplbau2kg8op"]
 
 [ext_resource type="ArrayMesh" uid="uid://bkrcktl5kofhf" path="res://Assets/House/Greenbook.vox" id="1_2a0j8"]
-[ext_resource type="Script" path="res://Scene/player_green_book.gd" id="1_kehhc"]
+[ext_resource type="Script" uid="uid://brkxb7hpt764l" path="res://Scene/player_green_book.gd" id="1_kehhc"]
 [ext_resource type="PackedScene" uid="uid://c1k83vdlnugf2" path="res://Scene/came_tp.tscn" id="3_6cwdg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4o7r3"]

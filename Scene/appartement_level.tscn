@@ -160,8 +160,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39637, 1.14596, -7.57782)
 [node name="Multiplayer_menu" parent="CanvasLayer" instance=ExtResource("15_aj4ef")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scene/hunter_cam.tscn")
+_spawnable_scenes = PackedStringArray("uid://pswvrpx35ekm")
 spawn_path = NodePath("../HunterSpawn1")
 
 [node name="HunterSpawn1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.95206, 2.13059, -13.9713)
+
+[node name="HideurSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48669, 0.814031, -0.280904)

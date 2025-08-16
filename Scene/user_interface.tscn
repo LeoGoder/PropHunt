@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://btwg7h1g7se15"]
 
-[ext_resource type="Script" path="res://Reticle.gd" id="1_tifmx"]
+[ext_resource type="Script" uid="uid://dj55a1dq8elbo" path="res://Reticle.gd" id="1_tifmx"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dx2ifkm7k0fht"]
 
-[ext_resource type="Script" path="res://Script/proto_gun.gd" id="1_tdb8a"]
+[ext_resource type="Script" uid="uid://bv03bk2kn8uab" path="res://Script/proto_gun.gd" id="1_tdb8a"]
 [ext_resource type="ArrayMesh" uid="uid://djc0qohf3ixht" path="res://Assets/ProtoGun.obj" id="1_xowjn"]
 
 [node name="ProtoGun" type="Node3D"]

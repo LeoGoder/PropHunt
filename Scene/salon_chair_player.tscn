@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ii8g65v53ma8"]
 
-[ext_resource type="Script" path="res://Script/salon_chair_player.gd" id="1_5ygiw"]
+[ext_resource type="Script" uid="uid://bs6mwp6movnpd" path="res://Script/salon_chair_player.gd" id="1_5ygiw"]
 [ext_resource type="ArrayMesh" uid="uid://c3jnlgsynoxfr" path="res://Assets/House/Chaise.vox" id="1_axjjr"]
 [ext_resource type="PackedScene" uid="uid://c1k83vdlnugf2" path="res://Scene/came_tp.tscn" id="3_vm6jr"]
 

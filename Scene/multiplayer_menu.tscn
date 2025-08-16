@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4lyv220iwyw8"]
 
-[ext_resource type="Script" path="res://Scene/multiplayer_menu.gd" id="1_d31j3"]
+[ext_resource type="Script" uid="uid://b7xdgy3n30hwp" path="res://Scene/multiplayer_menu.gd" id="1_d31j3"]
 [ext_resource type="PackedScene" uid="uid://bpwjyybt07w5f" path="res://Scene/roles_choice.tscn" id="2_efpfa"]
 
 [node name="Multiplayer_menu" type="Control"]

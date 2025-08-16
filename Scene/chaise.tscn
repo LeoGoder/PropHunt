@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c446o56fcmre2"]
 
-[ext_resource type="Script" path="res://Script/chaise.gd" id="1_7ybk5"]
+[ext_resource type="Script" uid="uid://h23i2f55ug1" path="res://Script/chaise.gd" id="1_7ybk5"]
 [ext_resource type="ArrayMesh" uid="uid://c3jnlgsynoxfr" path="res://Assets/House/Chaise.vox" id="1_nnssj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3u0ll"]

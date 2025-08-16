@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://crlnhw2blh6vk"]
 
-[ext_resource type="Script" path="res://Script/player_chair.gd" id="1_0ps5s"]
+[ext_resource type="Script" uid="uid://c3nnrybusm711" path="res://Script/player_chair.gd" id="1_0ps5s"]
 [ext_resource type="PackedScene" uid="uid://c1k83vdlnugf2" path="res://Scene/came_tp.tscn" id="1_67ms4"]
 [ext_resource type="ArrayMesh" uid="uid://dqwesnnsytwmi" path="res://Assets/chaiseTresBasique.obj" id="1_xq12a"]
 

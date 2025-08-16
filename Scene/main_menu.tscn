@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://c27gadpkryrb"]
 
-[ext_resource type="Script" path="res://Script/BoxContainer.gd" id="1_ah222"]
-[ext_resource type="Script" path="res://Scene/Multiplayer.gd" id="2_8ktsn"]
-[ext_resource type="Script" path="res://Script/Option.gd" id="2_a8w77"]
-[ext_resource type="Script" path="res://Script/Quit.gd" id="2_h4wa3"]
+[ext_resource type="Script" uid="uid://dknuguq3y273r" path="res://Script/BoxContainer.gd" id="1_ah222"]
+[ext_resource type="Script" uid="uid://odfkvio6rcpd" path="res://Scene/Multiplayer.gd" id="2_8ktsn"]
+[ext_resource type="Script" uid="uid://daw41ai41dfdu" path="res://Script/Option.gd" id="2_a8w77"]
+[ext_resource type="Script" uid="uid://dbk4v0ncj2ghv" path="res://Script/Quit.gd" id="2_h4wa3"]
 [ext_resource type="PackedScene" uid="uid://cu6bqfsd1dsen" path="res://Scene/option_menu.tscn" id="4_15xvo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kdbrk"]

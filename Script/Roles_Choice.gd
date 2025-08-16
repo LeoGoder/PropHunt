@@ -43,8 +43,11 @@ func add_player(peer_id):
 	if Global.roleID == 0:
 		var player = Hunter.instantiate()
 		player.name = str(peer_id)
+		#player.position = Vector3(8.952, 2.131, -13.971)
+		player.position = Vector3(2.487, 0.814, -0.281)
 		add_child(player)
 	if Global.roleID == 1:
 		var player = Hideur.instantiate()
 		player.name = str(peer_id)
+		player.position = Vector3(2.487, 0.814, -0.281)
 		add_child(player)

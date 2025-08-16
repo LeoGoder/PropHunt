@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://pswvrpx35ekm"]
 
-[ext_resource type="Script" path="res://Script/hunter_cam.gd" id="1_721yl"]
+[ext_resource type="Script" uid="uid://cnlytid6neuba" path="res://Script/hunter_cam.gd" id="1_721yl"]
 [ext_resource type="ArrayMesh" uid="uid://dtp80ys2gbey7" path="res://Assets/House/camera.vox" id="1_sn03h"]
 [ext_resource type="PackedScene" uid="uid://dyjit4avwoxa1" path="res://Scene/camera_fps.tscn" id="3_eatks"]
 

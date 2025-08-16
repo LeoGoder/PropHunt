@@ -19,4 +19,3 @@ func ChangeThePlayer(NewGlobal_position):
 			var newPlayer = preload("res://Scene/player_green_book.tscn").instantiate()
 			add_child(newPlayer)
 			newPlayer.global_position = NewGlobal_position
-

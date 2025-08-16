@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu6bqfsd1dsen"]
 
-[ext_resource type="Script" path="res://Script/option_menu.gd" id="1_3j8wb"]
-[ext_resource type="Script" path="res://Script/CloseOptionMenu.gd" id="1_20ku4"]
+[ext_resource type="Script" uid="uid://k6t0e3lbxhs6" path="res://Script/option_menu.gd" id="1_3j8wb"]
+[ext_resource type="Script" uid="uid://hpue433t7cxi" path="res://Script/CloseOptionMenu.gd" id="1_20ku4"]
 
 [node name="OptionMenu" type="Control"]
 layout_mode = 3

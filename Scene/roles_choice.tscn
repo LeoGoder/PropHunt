@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpwjyybt07w5f"]
 
-[ext_resource type="Script" path="res://Script/Roles_Choice.gd" id="1_pxap4"]
+[ext_resource type="Script" uid="uid://bkvi4dqfrvtgd" path="res://Script/Roles_Choice.gd" id="1_pxap4"]
 
 [node name="Roles_Choice" type="Control"]
 layout_mode = 3

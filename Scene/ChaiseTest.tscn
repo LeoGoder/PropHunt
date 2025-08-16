@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dl80lt3566yj5"]
 
-[ext_resource type="Script" path="res://Script/ChaiseTest.gd" id="1_s7tat"]
+[ext_resource type="Script" uid="uid://dxt5nucq6b5ui" path="res://Script/ChaiseTest.gd" id="1_s7tat"]
 [ext_resource type="ArrayMesh" uid="uid://dqwesnnsytwmi" path="res://Assets/chaiseTresBasique.obj" id="1_totf8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8fk5a"]

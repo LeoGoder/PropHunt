@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b0va6yynamgdu"]
 
 [ext_resource type="PackedScene" uid="uid://dyjit4avwoxa1" path="res://Scene/camera_fps.tscn" id="1_vsjpb"]
-[ext_resource type="Script" path="res://Script/hunter.gd" id="1_vvgbn"]
+[ext_resource type="Script" uid="uid://duasyw8pnfuf2" path="res://Script/hunter.gd" id="1_vvgbn"]
 [ext_resource type="PackedScene" uid="uid://dx2ifkm7k0fht" path="res://Scene/proto_gun.tscn" id="3_maoey"]
 [ext_resource type="PackedScene" uid="uid://btwg7h1g7se15" path="res://Scene/user_interface.tscn" id="4_52tpt"]
 [ext_resource type="PackedScene" uid="uid://cu6bqfsd1dsen" path="res://Scene/option_menu.tscn" id="5_tamrx"]
